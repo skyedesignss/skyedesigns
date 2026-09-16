@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Explore the creative projects of Daniel Owolabi, including UI/UX design, web development, graphics design, and video editing.">
+        <meta name="author" content="Daniel Owolabi">
+        <title>Projects - Daniel Owolabi</title>
+      
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link rel="stylesheet" href="style.css">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+      
+        <link rel="icon" type="image/x-icon" href="skye_designs/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="skye_designs/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="skye_designs/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="skye_designs/favicon-16x16.png">
+        <link rel="manifest" href="skye_designs/site.webmanifest">
+
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Projects - Daniel Owolabi",
+          "description": "Explore the creative projects of Daniel Owolabi, including UI/UX design, web development, graphics design, and video editing.",
+          "url": "https://codewithskye.github.io/projects.html",
+          "author": {
+            "@type": "Person",
+            "name": "Daniel Owolabi",
+            "url": "https://codewithskye.github.io/"
+          },
+          "hasPart": [
+            {
+              "@type": "CreativeWork",
+              "name": "UI/UX Design Projects"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Web Development Projects"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Graphics Design Projects"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Video Editing Projects"
+            }
+          ]
+        }
+    </script>
+    <style>
+        .project-links {
+            margin-top: 1.5em;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+    
+        .project-links .demo-btn {
+            padding: clamp(0.8em, 2vw, 1em) clamp(1.5em, 3vw, 2em);
+            border-radius: 15px;
+            border: none;
+            font-size: clamp(0.9em, 3vw, 1em);
+            font-weight: 500;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--primary-color), #001b60);
+            color: white;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            outline: none;
+            touch-action: manipulation;
+            box-shadow: 0 4px 15px rgba(0, 27, 96, 0.2);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            animation: glowPulse 3s ease-in-out infinite;
+        }
+    
+        .project-links .demo-btn:hover {
+            background: linear-gradient(135deg, #0056b3, var(--primary-color));
+            color: white;
+            box-shadow: 0 8px 25px rgba(0, 27, 96, 0.4), 0 0 0 3px rgba(0, 27, 96, 0.1);
+            transform: translateY(-3px) scale(1.05);
+            animation: magneticHover 0.6s ease-out, elasticScale 0.8s ease-out;
+        }
+    
+        @keyframes waterFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    
+        .project-links .visit-link {
+            color: #001b60;
+            font-weight: 600;
+            font-size: 1em;
+            text-decoration: underline;
+            position: relative;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+    
+        .project-links .visit-link:hover {
+            text-decoration: none;
+        }
+    
+        .project-links .visit-link::after {
+            content: '↗';
+            opacity: 0;
+            transform: translateX(-5px);
+            transition: all 0.3s ease;
+            margin-left: 6px;
+        }
+    
+        .project-links .visit-link:hover::after {
+            opacity: 1;
+            transform: translateX(2px);
+        }
+    
+        /* Responsive adjustments */
+        @media screen and (max-width: 600px) {
+            .project-links {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+    
+            .project-links .demo-btn,
+            .project-links .visit-link {
+                width: 100%;
+            }
+    
+            .project-links .visit-link {
+                margin-top: 0.5rem;
+                font-size: 1rem;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="mobile-scroll">
+    <a href="index.html" class="logo"><h2>Skye</h2></a>
+    <div class="menu-toggle-container">
+        <div class="mode-toggle" title="Toggle Dark Mode">
+            <i class='bx bx-moon' id="dark-mode-toggle"></i>
+        </div>
+        <div class="menu-toggle">
+            <i class='bx bx-menu-alt-right' id="menu-open"></i>
+            <i class='bx bx-x' id="menu-close" style="display: none;"></i>
+        </div>
+    </div>
+    <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="technexus.html">Tech Nexus <span class="new-badge">New</span></a></li>
+        <li><a href="contact.html" class="btn nav-btn">Contact Me <i class='bx bxs-chevron-right'></i></a></li>
+    </ul>
+    <div class="nav-right">
+        <a href="contact.html" class="btn nav-btn">Contact Me <i class='bx bxs-chevron-right'></i></a>
+        <div class="mode-toggle" title="Toggle Dark Mode">
+            <i class='bx bx-moon' id="dark-mode-toggle"></i>
+        </div>
+    </div>
+</nav>
+
+<!-- Projects Section -->
+<section id="projects" class="content-section projects-page">
+    <div class="projects-header">
+        <h1 class="header mobile-scroll">Projects</h1>
+    </div>
+    <div class="filter-container">
+        <button class="filter-btn" data-filter="ui/ux-design">UI/UX Designs</button>
+        <button class="filter-btn" data-filter="website-design">Website Design</button>
+    </div>
+    <div class="projects-container">
+
+       
+<!-- ui ux design section -->
+
+<div id="nexora" class="project-card mobile-scroll" data-category="ui/ux-design">
+
+    <img src="images/nexora-fintech-app.webp" alt="Nexora Fintech Mobile Banking App Design">
+
+    <h3>Nexora Fintech Mobile Banking Platform</h3><br>
+
+    <p class="project-description">
+        <strong>Overview:</strong>
+        Nexora is a modern fintech mobile application designed in Figma to simplify digital banking, money transfers, bill payments, and financial management through a secure and intuitive user experience.
+    </p>
+
+    <p class="project-description">
+        <strong>Problem:</strong>
+        Traditional banking applications often suffer from complex navigation, cluttered interfaces, and lengthy transaction processes that create friction for users managing their finances on mobile devices.
+    </p>
+
+    <p class="project-description">
+        <strong>Goal:</strong>
+        Design a seamless mobile banking experience that enables users to manage finances, transfer funds, monitor transactions, and access financial services quickly and confidently from a single platform.
+    </p>
+
+    <p class="project-description">
+        <strong>Research & Strategy:</strong>
+        The design process focused on understanding common pain points in digital banking, including onboarding friction, transaction visibility, payment confirmation, and financial tracking. The objective was to reduce cognitive load while maintaining trust, security, and ease of use.
+    </p>
+
+    <p class="project-description">
+        <strong>Solution:</strong>
+        Developed a complete fintech ecosystem featuring streamlined onboarding, wallet management, QR code payments, peer-to-peer transfers, transaction notifications, financial insights, and service integrations. A modern dark interface paired with vibrant accent colors was used to create a premium and trustworthy banking experience.
+    </p>
+
+    <p class="project-description">
+        <strong>Key Features:</strong><br>
+        • User onboarding and account creation flow<br>
+        • Secure authentication experience<br>
+        • Digital wallet dashboard<br>
+        • Peer-to-peer money transfers<br>
+        • QR code payment functionality<br>
+        • Transaction history and notifications<br>
+        • Financial analytics and spending insights<br>
+        • Utility payments and financial services hub<br>
+        • Profile and account management<br>
+        • Payment success and error handling flows
+    </p>
+
+    <p class="project-description">
+        <strong>User Experience Focus:</strong><br>
+        The experience was designed around simplicity, speed, and trust. Clear visual hierarchy, intuitive navigation patterns, and streamlined task flows help users complete financial actions with minimal effort while maintaining confidence throughout critical transactions.
+    </p>
+
+    <p class="project-description">
+        <strong>Design Process:</strong><br>
+        User Research → User Flow Mapping → Information Architecture → Wireframing → High-Fidelity UI Design → Design System Creation → Interactive Prototyping
+    </p>
+
+    <p class="project-description">
+        <strong>Tools Used:</strong>
+        Figma, Auto Layout, Components, Variants, Interactive Prototyping, Design System Development
+    </p>
+
+    <p class="project-description">
+        <strong>Outcome:</strong>
+        Delivered a scalable fintech product concept that demonstrates how modern digital banking can simplify financial management while improving accessibility, user confidence, and overall transaction efficiency across mobile devices.
+    </p>
+
+    <div class="project-links">
+        <a href="https://www.figma.com/design/jzGMhokZyDTiaBPCQFoVPx/My-Works?node-id=0-1&t=luP4a39c2Y9xA3Bq-1" target="_blank" class="demo-btn">
+            View Prototype
+        </a>
+    </div>
+
+</div>
+
+<div id="urbanblend" class="project-card mobile-scroll" data-category="ui/ux-design">
+
+    <img src="images/urbanblend-uiux.webp" alt="UrbanBlend Wireless Headphones E-commerce Experience">
+
+    <h3>UrbanBlend Audio E-commerce Experience</h3><br>
+
+    <p class="project-description">
+        <strong>Overview:</strong>
+        UrbanBlend is a modern e-commerce experience designed in Figma for a premium audio brand specializing in wireless headphones and accessories. The project focuses on creating an engaging shopping journey that balances product storytelling with conversion-driven design.
+    </p>
+
+    <p class="project-description">
+        <strong>Problem:</strong>
+        Many online electronics stores overwhelm users with technical specifications and cluttered layouts, making it difficult for shoppers to compare products, understand key benefits, and make confident purchasing decisions.
+    </p>
+
+    <p class="project-description">
+        <strong>Goal:</strong>
+        Design a seamless product discovery and purchasing experience that highlights product value, improves usability, and increases conversion opportunities across desktop and mobile devices.
+    </p>
+
+    <p class="project-description">
+        <strong>Research & Strategy:</strong>
+        The design process focused on understanding how users browse consumer electronics, compare product options, and evaluate purchasing decisions. Special attention was given to visual hierarchy, trust signals, product imagery, and call-to-action placement.
+    </p>
+
+    <p class="project-description">
+        <strong>Solution:</strong>
+        A clean and modern e-commerce interface was created featuring immersive product showcases, product variant exploration, customer ratings, pricing visibility, and strategically placed purchase actions. The experience guides users naturally from product discovery to checkout consideration.
+    </p>
+
+    <p class="project-description">
+        <strong>Key Features:</strong><br>
+        • Product-focused landing experience<br>
+        • Interactive product gallery and previews<br>
+        • Product comparison and model selection<br>
+        • Customer ratings and social proof integration<br>
+        • Conversion-focused call-to-action placement<br>
+        • Product specification and feature breakdowns<br>
+        • Responsive e-commerce layout design<br>
+        • Consistent design system and reusable components
+    </p>
+
+    <p class="project-description">
+        <strong>Design Process:</strong><br>
+        Competitive Analysis → User Flow Mapping → Wireframing → High-Fidelity UI Design → Component System → Interactive Prototyping
+    </p>
+
+    <p class="project-description">
+        <strong>Tools Used:</strong>
+        Figma, Auto Layout, Components, Variants, Interactive Prototyping
+    </p>
+
+    <p class="project-description">
+        <strong>Outcome:</strong>
+        Delivered a premium e-commerce product experience that improves product discoverability, simplifies purchasing decisions, and showcases how consumer electronics brands can create visually engaging, conversion-focused digital storefronts.
+    </p>
+
+    <div class="project-links">
+        <a href="https://www.figma.com/design/jzGMhokZyDTiaBPCQFoVPx/My-Works?node-id=0-1&t=luP4a39c2Y9xA3Bq-1" target="_blank" class="demo-btn">
+            View Prototype
+        </a>
+    </div>
+
+</div>
+
+<div class="project-card mobile-scroll" data-category="ui/ux-design">
+
+    <img src="images/fitlife-uiux.webp" alt="FitLife Fitness Platform UI/UX Design">
+
+    <h3>FitLife Fitness Booking & Membership Platform</h3><br>
+
+    <p class="project-description">
+        <strong>Overview:</strong>
+        FitLife is a comprehensive fitness platform designed in Figma to help gyms and wellness brands manage memberships, class bookings, trainer visibility, and customer engagement through a seamless digital experience.
+    </p>
+
+    <p class="project-description">
+        <strong>Problem:</strong>
+        Many fitness businesses rely on fragmented systems for memberships, scheduling, and customer communication, creating friction for users and reducing conversion opportunities.
+    </p>
+
+    <p class="project-description">
+        <strong>Goal:</strong>
+        Create an intuitive digital platform that simplifies the fitness journey—from discovering services and trainers to booking classes and becoming a long-term member.
+    </p>
+
+    <p class="project-description">
+        <strong>Research & Strategy:</strong>
+        The design focused on understanding how fitness enthusiasts interact with gym websites and booking systems. Key priorities included reducing booking friction, improving content discoverability, and creating clear conversion paths for prospective members.
+    </p>
+
+    <p class="project-description">
+        <strong>Solution:</strong>
+        Designed a complete user experience ecosystem featuring service discovery, trainer profiles, class scheduling, membership plans, testimonials, and booking workflows. The interface combines strong visual hierarchy, accessible navigation, and modern fitness branding to guide users toward meaningful actions.
+    </p>
+
+    <p class="project-description">
+        <strong>Key Features:</strong><br>
+        • Multi-page fitness platform design<br>
+        • Class booking and scheduling interface<br>
+        • Membership pricing and conversion funnels<br>
+        • Trainer profile and credibility sections<br>
+        • Customer testimonial integration<br>
+        • Mobile-first responsive layouts<br>
+        • Consistent design system and reusable components<br>
+        • Clear user journeys and navigation structure
+    </p>
+
+    <p class="project-description">
+        <strong>Design Process:</strong><br>
+        User Research → Information Architecture → Wireframing → High-Fidelity UI Design → Component System → Interactive Prototyping
+    </p>
+
+    <p class="project-description">
+        <strong>Tools Used:</strong>
+        Figma, Auto Layout, Components, Variants, Interactive Prototyping
+    </p>
+
+    <p class="project-description">
+        <strong>Outcome:</strong>
+        Delivered a scalable fitness platform concept that demonstrates how modern gyms can streamline member acquisition, simplify class management, and create a more engaging digital experience for their customers.
+    </p>
+
+    <div class="project-links">
+        <a href="https://www.figma.com/design/jzGMhokZyDTiaBPCQFoVPx/My-Works?node-id=0-1&t=luP4a39c2Y9xA3Bq-1" target="_blank" class="demo-btn">
+            View Prototype
+        </a>
+    </div>
+</div>
+
+<div class="project-card mobile-scroll" data-category="ui/ux-design">
+    <img src="images/NeuroMech-webd.webp" alt="NeuroMech 3D Landing Page">
+
+    <h3>NeuroMech 3D Interactive Landing Page</h3><br>
+
+        <p class="project-description"><strong>Overview:</strong> A futuristic robotics landing page designed to showcase human–AI collaboration through immersive 3D interaction and clean UI.</p>
+
+        <p class="project-description"><strong>Problem:</strong> Most AI websites are either too technical or visually uninspiring, leading to low engagement.</p>
+
+        <p class="project-description"><strong>Goal:</strong> Create an engaging experience that simplifies complex ideas while capturing attention instantly.</p>
+
+        <p class="project-description"><strong>Solution:</strong> Built a visually immersive interface using a real-time 3D robot, bold typography, and clear call-to-actions to guide users.</p>
+
+        <p class="project-description"><strong>Key Highlights:</strong><br>
+        • Interactive 3D hero (Spline)<br>
+        • Clean visual hierarchy<br>
+        • Lightweight animations for performance<br>
+        • Clear user flow and navigation
+        </p>
+
+    <div class="project-links">
+        <a href="https://codewithskye.github.io/NeuroMech/" target="_blank" class="demo-btn">
+            Visit Site
+        </a>
+    </div>
+</div>
+            
+
+    <div class="project-card mobile-scroll" data-category="ui/ux-design">
+        <img src="images/Dropmint-webd.webp" alt="DropMint DeFi Platform">
+
+        <h3>DropMint – DeFi Airdrop Platform</h3><br>
+
+        <p class="project-description"><strong>Overview:</strong> A decentralized platform designed to simplify crypto airdrops and community onboarding.</p>
+
+        <p class="project-description"><strong>Problem:</strong> Many DeFi platforms overwhelm users with complexity and lack trust signals.</p>
+
+        <p class="project-description"><strong>Goal:</strong> Design a clean, trustworthy interface that makes crypto participation simple.</p>
+
+        <p class="project-description"><strong>Solution:</strong> Structured layout with clear messaging, roadmap visualization, and onboarding-focused sections.</p>
+
+        <p><strong>Key Highlights:</strong><br>
+        • Simplified crypto messaging<br>
+        • Visual roadmap<br>
+        • FAQ for user clarity<br>
+        • Strong conversion-focused CTAs
+        </p>
+
+        <div class="project-links">
+            <a href="https://codewithskye.github.io/Dropmint_/" target="_blank" class="demo-btn">
+                Visit Site
+            </a>
+        </div>
+    </div>
+            
+
+    <div class="project-card mobile-scroll" data-category="ui/ux-design">
+            <img src="images/NestVibe (1).png" alt="NestVibe Realty">
+
+            <h3>NestVibe Realty Website</h3>
+
+            <p class="project-description"><strong>Overview:</strong> A modern real estate platform built to simplify property search and improve user trust.</p>
+
+            <p class="project-description"><strong>Problem:</strong> Property websites are often cluttered and hard to navigate.</p>
+
+            <p class="project-description"><strong>Goal:</strong> Create a clean, intuitive browsing experience.</p>
+
+            <p class="project-description"><strong>Solution:</strong> Designed a structured layout with filters, featured listings, and trust-building sections.</p>
+
+            <p><strong>Key Highlights:</strong><br>
+            • Smart filtering system<br>
+            • Clean layout & hierarchy<br>
+            • Testimonials & trust elements<br>
+            • Fully responsive design
+            </p>
+
+            <div class="project-links">
+                <a href="https://codewithskye.github.io/nestvibe/" target="_blank" class="demo-btn">
+                    Visit Site
+                </a>
+            </div>
+    </div>
+            
+        <div class="project-card mobile-scroll" data-category="ui/ux-design">
+            <img src="images/Shopdart.png" alt="ShopDart E-commerce">
+
+            <h3>ShopDart – Multi Vendor E-commerce</h3>
+
+            <p class="project-description"><strong>Overview:</strong> A live e-commerce platform delivering a smooth and efficient multi-vendor shopping experience.</p>
+
+            <p class="project-description"><strong>Problem:</strong> Many e-commerce platforms suffer from poor navigation and checkout friction.</p>
+
+            <p class="project-description"><strong>Goal:</strong> Improve user flow and increase conversion.</p>
+
+            <p class="project-description"><strong>Solution:</strong> Designed a clean interface with intuitive navigation and real-time cart updates.</p>
+
+            <p><strong>Key Highlights:</strong><br>
+            • Clear product hierarchy<br>
+            • Real-time cart feedback<br>
+            • Smooth navigation flow<br>
+            • Conversion-focused design
+            </p>
+
+            <div class="project-links">
+                <a href="https://shopdart.42web.io" target="_blank" class="demo-btn">
+                    Visit Site
+                </a>
+            </div>
+        </div>
+        
+        <div class="project-card mobile-scroll" data-category="ui/ux-design">
+                <img src="images/keyboard (1).png" alt="Yoruba Keyboard UI">
+
+                <h3>Yorùbá Mobile Keyboard – Inclusive UX</h3>
+
+                <p><strong>Overview:</strong> A mobile keyboard designed to support seamless typing in both English and Yorùbá.</p>
+
+                <p><strong>Problem:</strong> Indigenous languages are poorly supported on most smartphones.</p>
+
+                <p><strong>Goal:</strong> Enable fast, natural typing without switching apps.</p>
+
+                <p><strong>Solution:</strong> Designed a dual-language keyboard with quick toggles and long-press diacritics.</p>
+
+                <p><strong>Key Highlights:</strong><br>
+                • EN ⇆ YOR quick switch<br>
+                • Tone mark support<br>
+                • Familiar QWERTY layout<br>
+                • Scalable for other languages
+                </p>
+
+                <div class="project-links">
+                    <a href="https://www.linkedin.com/posts/codewithskye_smartphones-samsung-ios-activity-7365134014497665024-3fYT" target="_blank" class="demo-btn">
+                        View Prototype
+                    </a>
+                </div>
+        </div>
+
+<!-- Website Development Section -->
+
+<div id="superplumber" class="project-card mobile-scroll" data-category="website-design">
+
+    <img src="images/superplumberr.avif" alt="Miami Beach Super Plumber Website">
+
+    <h3>Miami Beach Super Plumber - Plumbing Service Business Website</h3><br>
+
+    <p class="project-description">
+        <strong>Overview:</strong>
+        Miami Beach Super Plumber is a modern service-business website designed and developed to help homeowners and commercial property owners quickly access professional plumbing services. The platform focuses on trust-building, emergency response conversion, and seamless user navigation.
+    </p>
+
+    <p class="project-description">
+        <strong>Problem:</strong>
+        Many local plumbing companies struggle with outdated websites that fail to communicate credibility, service coverage, and emergency availability. Users often have difficulty finding key information quickly, resulting in lost leads and reduced customer confidence.
+    </p>
+
+    <p class="project-description">
+        <strong>Goal:</strong>
+        Create a conversion-focused website that highlights emergency plumbing services, establishes trust through social proof, and encourages visitors to take immediate action through strategically placed contact options.
+    </p>
+
+    <p class="project-description">
+        <strong>UX & Design Strategy:</strong>
+        The user journey was carefully structured around urgency and trust. Clear calls-to-action, prominent contact information, service categorization, customer reviews, coverage areas, and a simplified service process were strategically placed throughout the website to reduce friction and increase conversions.
+    </p>
+
+    <p class="project-description">
+        <strong>Development Approach:</strong>
+        Built from scratch using semantic HTML5, modern CSS3, and JavaScript, the website emphasizes performance, responsiveness, and maintainability. AOS (Animate On Scroll) was integrated to create engaging transitions while preserving usability and accessibility across all devices.
+    </p>
+
+    <p class="project-description">
+        <strong>Key Features:</strong><br>
+        • Fully responsive mobile-first design<br>
+        • Emergency plumbing conversion-focused hero section<br>
+        • Service showcase with detailed categories<br>
+        • Customer testimonials and review integration<br>
+        • Coverage area and service location presentation<br>
+        • FAQ section for common customer concerns<br>
+        • Clear multi-step customer service process<br>
+        • Strategic call-to-action placement throughout the site<br>
+        • Modern animations using AOS<br>
+        • Professional trust-building layout and content hierarchy
+    </p>
+
+    <p class="project-description">
+        <strong>Technologies Used:</strong>
+        HTML5, CSS3, JavaScript, AOS (Animate On Scroll)
+    </p>
+
+    <p class="project-description">
+        <strong>Outcome:</strong>
+        Delivered a modern plumbing service platform that effectively communicates expertise, builds customer trust, and creates a streamlined path from website visit to service inquiry. The project demonstrates how strong UI design and frontend development can improve user engagement and support local business growth.
+    </p>
+
+    <div class="project-links">
+        <a href="https://superplumberincc.vercel.app/" target="_blank" class="demo-btn">
+            Visit Website
+        </a>
+    </div>
+
+</div>
+
+<div class="project-card mobile-scroll" data-category="website-design">
+    <img src="images/agriinvest.webp" alt="AgriInvestment Platform">
+
+    <h3><span>AgriInvestment — Agricultural Investment Platform</span></h3><br>
+
+    <p class="project-description">
+        <strong>Project Overview:</strong> AgriInvestment is an agriculture-based investment platform that presents users with opportunities to invest in farming, crop production, and agribusiness ventures. The platform is positioned as a way for individuals to earn returns by funding agricultural projects.
+    </p>
+
+    <p class="project-description">
+        <strong>Problem:</strong> Many agricultural investment platforms online struggle with <strong>trust, clarity, and transparency</strong>. Users are often presented with high-return promises but little explanation of how the system works. 
+        Research shows that some platforms in this space raise red flags such as low credibility, unclear ownership, and poor user experience, which can make users hesitant to invest.
+    </p>
+
+    <p class="project-description">
+        <strong>Goal:</strong> Redesign and structure a landing experience that:
+        <br>• Clearly explains how agricultural investment works
+        <br>• Builds user trust through transparency and structure
+        <br>• Simplifies complex financial concepts for everyday users
+        <br>• Encourages safe and informed participation
+    </p>
+
+    <p class="project-description">
+        <strong>Solution:</strong> Designed a clean, conversion-focused landing page with:
+        <br>• A strong hero section explaining “what the platform does” in simple terms
+        <br>• Structured investment plans with clear breakdowns (duration, returns, risk level)
+        <br>• Trust-building sections like FAQs, testimonials, and transparency blocks
+        <br>• Step-by-step “How It Works” flow to guide new users
+        <br>• Clear CTAs such as “Start Investing” and “Learn More”
+    </p>
+
+    <p class="project-description">
+        <strong>Case Study:</strong> The design focuses heavily on <strong>user trust and clarity</strong>, which are critical in financial and investment platforms. 
+        Many similar platforms fail due to lack of credibility signals, so this solution prioritizes:
+        <br>• Visual hierarchy to highlight key information
+        <br>• Simple language instead of technical jargon
+        <br>• Transparency-driven UI sections
+        <br>• Mobile-friendly layout for accessibility
+        <br><br>
+        The result is a platform experience that feels more reliable, understandable, and user-centered, improving both engagement and conversion potential.
+    </p>
+
+    <div class="project-links">
+        <a href="https://agriinvestusa.great-site.net/" target="_blank" rel="noopener noreferrer" class="demo-btn">
+            🔗 Visit Site <i class='bx bx-play-circle'></i>
+        </a>
+    </div>
+</div>
+
+<div class="project-card mobile-scroll" data-category="website-design">
+    <img src="images/certified-texas-plumbing.webp" alt="Certified Texas Plumbing Website">
+
+    <h3><span>Certified Texas Plumbing — Service-Based Business Website</span></h3><br>
+
+    <p class="project-description">
+        <strong>Project Overview:</strong> Certified Texas Plumbing is a service-based website designed for a local plumbing company. The platform focuses on helping homeowners quickly understand available services, build trust, and request plumbing assistance without friction.
+    </p>
+
+    <p class="project-description">
+        <strong>Problem:</strong> Many plumbing websites suffer from poor structure, unclear messaging, and weak conversion paths. Users often struggle to:
+        <br>• Find key services quickly
+        <br>• Trust the company due to lack of credibility signals
+        <br>• Take action (call, book, request service)
+        <br><br>
+        In competitive local markets, this leads to lost leads and high bounce rates.
+    </p>
+
+    <p class="project-description">
+        <strong>Goal:</strong> Design a clean, high-converting service website that:
+        <br>• Clearly communicates services and expertise
+        <br>• Builds trust instantly with visitors
+        <br>• Encourages fast action (call or booking)
+        <br>• Works seamlessly across mobile and desktop
+    </p>
+
+    <p class="project-description">
+        <strong>Solution:</strong> The website was structured using a conversion-focused layout:
+        <br>• Strong hero section with bold headline and CTA (“Call Now”, “Get Service”)
+        <br>• Clearly defined service categories (repairs, installations, inspections)
+        <br>• Trust indicators such as experience, guarantees, and certifications
+        <br>• Testimonials to reinforce credibility
+        <br>• Simple contact flow to reduce friction for users needing urgent help
+    </p>
+
+    <p class="project-description">
+        <strong>Case Study:</strong> The design follows proven service-based UX patterns where speed and trust are critical. 
+        Plumbing services are often urgent, so the interface prioritizes:
+        <br>• Immediate visibility of contact actions
+        <br>• Clear service breakdown for quick decision-making
+        <br>• Minimal distractions to guide users toward conversion
+        <br><br>
+        By combining strong visual hierarchy, responsive layout, and trust-driven sections, the website improves user confidence and increases the likelihood of inquiries and service bookings.
+    </p>
+
+    <div class="project-links">
+        <a href="https://certifiedtexasplumbing.vercel.app/" target="_blank" rel="noopener noreferrer" class="demo-btn">
+            🔗 Visit Site <i class='bx bx-play-circle'></i>
+        </a>
+    </div>
+</div>
+
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="content-section">
+    <h1 class="header mobile-scroll">Let's Collaborate</h1>
+    <form id="contactForm" action="https://formspree.io/f/movdqpoe/" method="POST" class="mobile-scroll">
+        <div class="input-box">
+            <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="input-box">
+            <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="input-box">
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+    <div class="marquee-container mobile-scroll">
+        <p class="marquee">👨‍💻 UX/UI Designer • 🎨 Figma • 🚀 Webflow • 🧠 Design Thinking • 📱 Responsive Design • 🔧 Prototyping • Available for freelance work! Let’s collaborate on your next project.</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="mobile-scroll content-section">
+    <div class="col-left">
+        <div class="col-box">
+            <span><i class='bx bx-location-plus'></i></span>
+            <span>Lagos, Nigeria.</span>
+        </div>
+        <div class="col-box">
+            <span><i class='bx bx-envelope'></i></span>
+            <span>skyedesignssd@gmail.com</span>
+        </div>
+    </div>
+    <div class="col-right">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/codewithskye/" target="_blank" rel="noopener noreferrer"><span><i class='bx bxl-linkedin'></i></span></a>
+            <a href="https://www.instagram.com/code.withskye/" target="_blank" rel="noopener noreferrer"><span><i class='bx bxl-instagram'></i></span></a>
+            <a href="https://web.facebook.com/codewithskye" target="_blank" rel="noopener noreferrer"><span><i class='bx bxl-facebook'></i></span></a>
+            <a href="https://github.com/codewithskye" target="_blank" rel="noopener noreferrer"><span><i class='bx bxl-github'></i></span></a>
+        </div>
+    </div>
+<div class="copyright">
+    <span id="copyright-text"></span>
+</div>
+    
+</footer>
+
+<script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/08/19/11/20260819115129-JHOZGTJA.js" defer></script>
+
+
+
+<script>
+    function downloadResume(file) {
+      if(file) {
+        window.location.href = file;
+      }
+    }
+function updateDateTime() {
+    const now = new Date();
+
+    const year = now.getFullYear();
+    const date = now.toLocaleDateString();
+    const time = now.toLocaleTimeString();
+
+    document.getElementById("copyright-text").innerHTML =
+        `© All rights reserved <strong>skyedesigns</strong> ${year} | ${date} ${time}`;
+}
+
+updateDateTime();
+
+setInterval(updateDateTime, 1000);
+
+</script>
+    <script src="script.js"></script>
+    <button id="scroll-arrow" class="scroll-arrow hidden" title="Scroll to top">
+        <i class='bx bx-chevron-up'></i>
+    </button>
+</body>
+</html>
